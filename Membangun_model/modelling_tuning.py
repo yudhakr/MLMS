@@ -21,10 +21,12 @@ X_test = test_df.drop(columns=["target"])
 y_test = test_df["target"]
 
 # Lokal
-# mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+mlflow.set_tracking_uri("http://127.0.0.1:5000/")
+# mlflow.set_tracking_uri("https://dagshub.com/yudhakr/MLMS.mlflow")
+mlflow.set_experiment("Insurance_Cost_Prediction")
 
 # DagsHub
-dagshub.init(repo_owner='abiyamf', repo_name='my-first-repo', mlflow=True)
+dagshub.init(repo_owner='yudhakr', repo_name='MLMS', mlflow=True)
 
 mlflow.set_experiment("Insurance_Cost_Prediction_Tuning")
 
